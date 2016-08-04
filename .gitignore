@@ -1,0 +1,6 @@
+.buildpath
+.project
+.settings/*
+
+build
+conceptcard/build

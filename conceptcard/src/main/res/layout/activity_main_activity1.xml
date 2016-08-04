@@ -1,0 +1,69 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/db1_root"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <include layout="@layout/home_header"/>
+<ScrollView 
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:fillViewport="true"
+    >
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:padding="6dip">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <Button android:id="@+id/bStartNewLoyaltyCard"
+            style="@style/HomeButton"
+            android:onClick="onClickFeature"
+            android:text="Issue Loyalty Card"
+            android:drawableTop="@drawable/home_button1"/>
+        <Button android:id="@+id/bRedeemloyaltyCard"
+            style="@style/HomeButton"
+            android:onClick="onClickFeature"
+            android:text="Redeem Loyalty Card"
+            android:drawableTop="@drawable/home_button2"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <Button android:id="@+id/bAddPointsToLoyaltyCard"
+            style="@style/HomeButton"
+            android:onClick="onClickFeature"
+            android:text="@string/APTLC"
+            android:drawableTop="@drawable/home_button3"
+            />
+         <Button android:id="@+id/bIssueGiftCard"
+            style="@style/HomeButton"
+            android:onClick="onClickFeature"
+            android:text="@string/IGC"
+            android:drawableTop="@drawable/home_button5"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+       
+        <Button android:id="@+id/bRedeemGiftCard"
+            style="@style/HomeButton"
+            android:onClick="onClickFeature"
+            android:text="@string/RGC"
+            android:drawableTop="@drawable/home_button6"/>
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>
+</LinearLayout>

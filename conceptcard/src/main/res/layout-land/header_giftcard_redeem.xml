@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+        style="@style/TitleBar">
+        <ImageButton android:id="@+id/bGoBack"  
+            style="@style/TitleBarAction"
+            android:contentDescription="@string/description_home"
+            android:src="@drawable/title_home"
+            android:onClick="onClickHome" />
+
+        <ImageView style="@style/TitleBarSeparator" />
+        <TextView style="@style/TitleBarText" 
+            android:text="Gift Card - Redeem Value"/>
+        <!-- <ImageButton android:id="@+id/about" 
+            style="@style/TitleBarAction"
+            android:contentDescription="@string/description_about"
+            android:src="@drawable/title_about"
+            android:onClick="onClickAbout" /> --> 
+        <ImageButton android:id="@+id/logout" 
+            style="@style/TitleBarAction"
+            android:contentDescription="@string/description_search"
+            android:src="@drawable/title_search"
+            android:onClick="onClickSearch" />
+    </LinearLayout>
+

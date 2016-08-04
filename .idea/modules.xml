@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/conceptcard/conceptcard.iml" filepath="$PROJECT_DIR$/conceptcard/conceptcard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/conceptcard-android.iml" filepath="$PROJECT_DIR$/conceptcard-android.iml" />
+    </modules>
+  </component>
+</project>

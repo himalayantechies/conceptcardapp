@@ -1,0 +1,85 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login" >	<include 
+	     android:id="@+id/include1"
+	    layout="@layout/login_header"/>
+	
+	<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/include1"
+    android:fillViewport="true"
+    android:padding="10dip" >
+	<RelativeLayout
+	    android:id="@+id/logindp"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	   
+	    >
+    <Button
+        android:id="@+id/login"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/custom_button"
+        android:textColor="@drawable/custom_textcolor"
+        android:text="Login"
+        />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="78dp"
+        android:text="Username"
+        android:textColor="#372c24"
+         />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:text=""
+        android:background="@drawable/ed_border"
+        android:width="100dp" >
+         <requestFocus />
+      </EditText>
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/username"
+        android:layout_below="@+id/username"
+        android:layout_marginTop="26dp"
+        android:text="Password"
+        android:textColor="#372c24"
+        />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="14dp"
+       	android:background="@drawable/ed_border"
+        android:ems="10"
+        android:password="true"
+        android:text=""
+        android:width="100dp" >
+
+       
+    </EditText>
+    </RelativeLayout>
+</ScrollView>
+</RelativeLayout>

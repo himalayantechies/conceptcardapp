@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".StartNewLoyaltyCard" >
+	<include
+        android:id="@+id/include1"
+        layout="@layout/header_giftcard_redeem" />
+	<ScrollView
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@+id/include1"
+	    android:fillViewport="true"
+	    android:padding="10dip" >
+		<LinearLayout
+	          android:id="@+id/redeemgift"
+	          android:orientation="vertical"
+	          android:layout_width="match_parent"
+	          android:layout_height="wrap_content"
+	          android:padding="10dip"
+	          android:layout_marginTop="20dp"
+	          android:layout_below="@+id/include1">
+				<TextView android:id="@+id/tvGiftCardNum"
+	              android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:textColor="#372c24"
+	                android:text="Giftcard Number"/>
+	          <EditText  android:id="@+id/etGiftCardNum"
+	              android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                 android:layout_marginTop="5dip"
+	                android:layout_marginBottom="5dip"
+	                android:singleLine="true"
+	                android:background="@drawable/ed_border"
+	                android:inputType="text"
+	                android:digits="0,1,2,3,4,5,6,7,8,9,qwertzuiopasdfghjklyxcvbnm"/>
+	          <TextView android:id="@+id/tvError"
+	              android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:textColor="#DA2121"
+	                android:text=""/>
+	           <TextView android:id="@+id/tvGiftSpend"
+	              android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:textColor="#372c24"
+	                android:text="Redeem Value"/>
+	          <EditText android:id="@+id/etGiftSpend"
+	              android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginTop="5dip"
+	                android:layout_marginBottom="5dip"
+	                android:singleLine="true"
+	                android:background="@drawable/ed_border"
+	                android:inputType="numberDecimal"/>
+	          <TextView android:id="@+id/tvRedeemCurrentValue"
+	              android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:textColor="#372c24"
+	                android:text="Current Value"/>
+	          <TextView android:id="@+id/setRedeemCurrentVaule"
+	              android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginTop="5dip"
+	                android:layout_marginBottom="5dip"
+	                />
+	          <TextView android:id="@+id/tvGiftSpend"
+	              android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:textColor="#372c24"
+	                android:text="@string/keyintoredeemgift"/>
+	          <!-- Login button -->
+	          <Button android:id="@+id/bGiftReturn"
+	                android:layout_width="150dp"
+	                android:layout_height="wrap_content"
+	                android:layout_marginTop="20dip"
+	                android:text="@string/retrn"
+	                android:background="@drawable/custom_button"
+	        		android:textColor="@drawable/custom_textcolor"/>
+	        		<!-- android:layout_gravity="center"  -->
+		</LinearLayout>
+	</ScrollView>
+</RelativeLayout>

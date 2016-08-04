@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+<include
+        android:id="@+id/include1"
+        layout="@layout/header_loyalty_redeem" />
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_below="@+id/include1"
+    android:fillViewport="true"
+    android:padding="10dip" >
+<LinearLayout
+          android:id="@+id/redeemgift"
+          android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:padding="10dip"
+          android:layout_marginTop="20dp"
+          android:layout_below="@+id/include1">
+    
+    
+    
+    <TextView android:id="@+id/tvCardNum"
+              android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#372c24"
+               android:text="@string/CardNum"/>
+          <EditText  android:id="@+id/etCardNum"
+              android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:layout_marginBottom="5dip"
+                android:singleLine="true"
+                android:background="@drawable/ed_border"
+                android:inputType="text"
+                android:digits="0,1,2,3,4,5,6,7,8,9,qwertzuiopasdfghjklyxcvbnm"/>
+           <TextView android:id="@+id/tvSpend"
+              android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#372c24"
+                android:text="Point Spend"/>
+          <EditText android:id="@+id/etSpend"
+              android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:layout_marginBottom="5dip"
+                android:singleLine="true"
+                android:background="@drawable/ed_border"
+                android:inputType="numberDecimal"/>
+          <TextView android:id="@+id/tvRedeemCurrentPoint"
+              android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#372c24"
+                android:text="Current Point"/>
+          <TextView android:id="@+id/setRedeemCurrentPoint"
+              android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:layout_marginBottom="5dip"
+                />
+          <TextView android:id="@+id/tvKeyIn"
+              android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#372c24"
+                android:text="@string/keyintoredeempts"/>
+          <!-- Login button -->
+          <Button android:id="@+id/bReturn"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:text="@string/retrn"
+                android:layout_gravity="left"
+                android:background="@drawable/custom_button"
+        		android:textColor="@drawable/custom_textcolor"/>
+</LinearLayout>
+   </ScrollView> 
+
+</RelativeLayout>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/include1"
+        layout="@layout/header_loyalty_issue" />
+    <TextView
+        android:id="@+id/tvTBSC"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/include1"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="19dp"
+        android:text="@string/swipe"
+        android:textSize="14sp"
+        android:textColor="#372c24" />
+
+    <EditText
+        android:id="@+id/etCardNumber"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvTBSC"
+        android:layout_below="@+id/tvTBSC"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/ed_border"
+        android:ems="7"
+        android:inputType="text" 
+        android:digits="0,1,2,3,4,5,6,7,8,9,qwertzuiopasdfghjklyxcvbnm"/>
+
+    <TextView
+        android:id="@+id/tvCardNumber"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/etCardNumber"
+        android:layout_alignRight="@+id/etCardNumber"
+        android:layout_below="@+id/etCardNumber"
+        android:layout_marginTop="10dp"
+        android:textColor="#372c24"
+        android:text="@string/checkCardNumber"
+        />
+
+    <Button
+        android:id="@+id/bReturn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvCardNumber"
+        android:layout_below="@+id/tvCardNumber"
+        android:background="@drawable/custom_button"
+        android:text="@string/retrn"
+        android:textColor="@drawable/custom_textcolor" />
+   
+    <ScrollView
+      android:id="@+id/addnewloyalty"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_below="@+id/bReturn"
+    android:fillViewport="true"
+    android:visibility="gone"
+    android:padding="10dip" >
+  <LinearLayout
+
+          android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:padding="5dip"
+
+          android:layout_below="@+id/bReturn">
+          <TextView android:id="@+id/tvName"
+              android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#372c24"
+                android:text="@string/name"/>
+          <EditText android:id="@+id/etName"
+              android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:inputType="text"
+                android:background="@drawable/ed_border"/>
+           <TextView android:id="@+id/tvEmail"
+              android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#372c24"
+                android:text="@string/email"/>
+          <EditText android:id="@+id/etEmail"
+              android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/ed_border"/>
+          <TextView android:id="@+id/tvLoyaltyCardnumber"
+              android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#372c24"
+                android:text="@string/CardNum"/>
+          <EditText android:id="@+id/etLoyaltyCardnumber"
+              android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:inputType="text"
+                android:background="@drawable/ed_border"/>
+          <!--  Password Label -->
+          <TextView android:id="@+id/tvInitialPoint"
+              android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#372c24"
+                android:text="Initial Point"/>
+          <EditText android:id="@+id/etInitialPoint"
+              android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:inputType="numberDecimal"
+                android:background="@drawable/ed_border"/>
+          <!-- Login button -->
+          <Button android:id="@+id/bSave"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dip"
+                android:text="@string/save"
+                android:layout_gravity="left"
+               android:background="@drawable/custom_button"
+        		android:textColor="@drawable/custom_textcolor"/>
+          
+ 
+</LinearLayout>
+</ScrollView>
+ <ScrollView
+     android:id="@+id/alreadyexist"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_below="@+id/bReturn"
+    android:fillViewport="true"
+     android:visibility="gone"
+    android:padding="10dip" >
+<LinearLayout
+
+          android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:padding="10dip"
+          android:layout_below="@+id/bReturn">
+    <TextView
+        android:id="@+id/bcardexistmsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Card already exist !!"
+        android:layout_gravity="center"
+        android:textColor="#10A7ED"
+        android:textSize="16dp"
+        />
+
+    <Button
+        android:id="@+id/bgiftredeem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bcardexistmsg"
+        android:layout_gravity="center"
+         android:layout_marginTop="10dp"
+        android:text="Redeem Loyalty Card"
+        android:background="@drawable/custom_button"
+   		android:textColor="@drawable/custom_textcolor"
+        /> 
+       
+</LinearLayout>
+</ScrollView>
+</RelativeLayout>
