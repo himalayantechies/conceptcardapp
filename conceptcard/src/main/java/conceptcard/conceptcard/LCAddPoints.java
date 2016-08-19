@@ -52,7 +52,7 @@ import android.widget.Toast;
 public class LCAddPoints extends Activity{
 	ImageButton bGoBack;
 	Button bSave;
-	EditText etAddLoyaltyCardNum,etAddAmtofSpend;
+	EditText etAddLoyaltyCardNum, etAddAmtofSpend;
 	TextView setPointsAllocated,setCurrentPoint;
 	ProgressDialog pd;
 	MediaPlayer btnsound;
@@ -81,7 +81,7 @@ public class LCAddPoints extends Activity{
 				// TODO Auto-generated method stub
 				AlertDialog alertabout = new AlertDialog.Builder(LCAddPoints.this).create();
 				alertabout.setTitle("About Us");
-				alertabout.setMessage("Loyaltycard and Giftcard terminal by conceptcard.oopsnepal.com");
+				alertabout.setMessage("Loyalty Card and Gift Card terminal by Concept Card");
 				alertabout.setCancelable(true);
 				alertabout.setButton("OK", new DialogInterface.OnClickListener() {
 					
@@ -207,7 +207,7 @@ public class LCAddPoints extends Activity{
 		case ABOUT:
 			AlertDialog alertabout = new AlertDialog.Builder(LCAddPoints.this).create();
 			alertabout.setTitle("About Us");
-			alertabout.setMessage("Loyaltycard and Giftcard terminal by conceptcard.oopsnepal.com");
+			alertabout.setMessage("Loyalty Card and Gift Card terminal by Concept Card");
 			alertabout.setCancelable(true);
 			alertabout.setButton("OK", new DialogInterface.OnClickListener() {
 				
@@ -256,17 +256,13 @@ private class asyncConnection extends AsyncTask<Void, Void, JSONObject> {
 			HttpClient httpclient = new DefaultHttpClient();
 			HttpContext localContext = new BasicHttpContext();
 			localContext.setAttribute(ClientContext.COOKIE_STORE, INSConst.cookieStore);
-			HttpPost httppost = new HttpPost(
-				"http://conceptcard.oopsnepal.com/tblloyaltycardhistories/json_add_points/");
+			HttpPost httppost = new HttpPost("http://customerloyaltyplus.com/tblloyaltycardhistories/json_add_points/");
 							
 			try {
 				// Add your data
-
 				List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-				nameValuePairs.add(new BasicNameValuePair("cardnumber",
-						etAddLoyaltyCardNum.getText().toString()));
-				nameValuePairs.add(new BasicNameValuePair("ValueSpent",
-						etAddAmtofSpend.getText().toString()));
+				nameValuePairs.add(new BasicNameValuePair("cardnumber", etAddLoyaltyCardNum.getText().toString()));
+				nameValuePairs.add(new BasicNameValuePair("ValueSpent", etAddAmtofSpend.getText().toString()));
 				httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
 				// Execute HTTP Post Request
@@ -343,15 +339,13 @@ private class asyncConnection extends AsyncTask<Void, Void, JSONObject> {
 			HttpClient httpclient = new DefaultHttpClient();
 			HttpContext localContext = new BasicHttpContext();
 			localContext.setAttribute(ClientContext.COOKIE_STORE, INSConst.cookieStore);
-			HttpPost httppost = new HttpPost(
-				"http://conceptcard.oopsnepal.com/tblloyaltycardholders/json_remainingPoint/");
+			HttpPost httppost = new HttpPost("http://customerloyaltyplus.com/tblloyaltycardholders/json_remainingPoint/");
 							
 			try {
 				// Add your data
 	
 				List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-				nameValuePairs.add(new BasicNameValuePair("cardnumber",
-						etAddLoyaltyCardNum.getText().toString()));
+				nameValuePairs.add(new BasicNameValuePair("cardnumber", etAddLoyaltyCardNum.getText().toString()));
 				httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 	
 				// Execute HTTP Post Request

@@ -79,7 +79,7 @@ public class AmountSpent extends Activity{
 				// TODO Auto-generated method stub
 				AlertDialog alertabout = new AlertDialog.Builder(AmountSpent.this).create();
 				alertabout.setTitle("About Us");
-				alertabout.setMessage("Loyaltycard and Giftcard terminal by conceptcard.oopsnepal.com");
+				alertabout.setMessage("Loyalty Card and Gift Card terminal by Concept Card");
 				alertabout.setCancelable(true);
 				alertabout.setButton("OK", new DialogInterface.OnClickListener() {
 					
@@ -172,7 +172,7 @@ public class AmountSpent extends Activity{
 		case ABOUT:
 			AlertDialog alertabout = new AlertDialog.Builder(AmountSpent.this).create();
 			alertabout.setTitle("About Us");
-			alertabout.setMessage("Loyaltycard and Giftcard terminal by conceptcard.oopsnepal.com");
+			alertabout.setMessage("Loyalty Card and Gift Card terminal by Concept Card");
 			alertabout.setCancelable(true);
 			alertabout.setButton("OK", new DialogInterface.OnClickListener() {
 				
@@ -215,8 +215,7 @@ public class AmountSpent extends Activity{
 			HttpClient httpclient = new DefaultHttpClient();
 			HttpContext localContext = new BasicHttpContext();
 			localContext.setAttribute(ClientContext.COOKIE_STORE, INSConst.cookieStore);
-			HttpPost httppost = new HttpPost(
-					"http://conceptcard.oopsnepal.com/tblloyaltycardhistories/json_redeem_points/");
+			HttpPost httppost = new HttpPost("http://customerloyaltyplus.com/tblloyaltycardhistories/json_redeem_points/");
 							
 			try {
 				// Add your data
@@ -283,8 +282,6 @@ public class AmountSpent extends Activity{
 					}else{
 						String msg = json.getString("error_msg");
 							Toast.makeText(getApplicationContext(),msg, Toast.LENGTH_LONG).show();
-							//Intent mainpage = new Intent(getApplicationContext(),MainActivity.class);
-							//startActivity(mainpage);
 					}
 				}
 			
@@ -303,8 +300,7 @@ public class AmountSpent extends Activity{
 			HttpClient httpclient = new DefaultHttpClient();
 			HttpContext localContext = new BasicHttpContext();
 			localContext.setAttribute(ClientContext.COOKIE_STORE, INSConst.cookieStore);
-			HttpPost httppost = new HttpPost(
-				"http://conceptcard.oopsnepal.com/tblloyaltycardholders/json_remainingPoint/");
+			HttpPost httppost = new HttpPost("http://customerloyaltyplus.com/tblloyaltycardholders/json_remainingPoint/");
 							
 			try {
 				// Add your data

@@ -202,7 +202,7 @@ public class Redeemgift extends Activity {
 			HttpClient httpclient = new DefaultHttpClient();
 			HttpContext localContext = new BasicHttpContext();
 			localContext.setAttribute(ClientContext.COOKIE_STORE, INSConst.cookieStore);
-			HttpPost httppost = new HttpPost("http://conceptcard.oopsnepal.com/tblgiftcardhistories/json_redeem_giftcard/");
+			HttpPost httppost = new HttpPost("http://customerloyaltyplus.com/tblgiftcardhistories/json_redeem_giftcard/");
 							
 			try {
 				// Add your data
@@ -218,7 +218,7 @@ public class Redeemgift extends Activity {
 				HttpResponse response = httpclient.execute(httppost, localContext);
 				String responseStr = EntityUtils.toString(response.getEntity());
 				res = new JSONObject(responseStr);
-				Log.d("result", "http://conceptcard.oopsnepal.com/tblgiftcardhistories/json_redeem_giftcard/");
+				Log.d("result", "http://customerloyaltyplus.com/tblgiftcardhistories/json_redeem_giftcard/");
 				Log.d("result", responseStr);
 				
 			} catch (ClientProtocolException e) {
@@ -290,8 +290,7 @@ public class Redeemgift extends Activity {
 			HttpClient httpclient = new DefaultHttpClient();
 			HttpContext localContext = new BasicHttpContext();
 			localContext.setAttribute(ClientContext.COOKIE_STORE, INSConst.cookieStore);
-			HttpPost httppost = new HttpPost(
-				"http://conceptcard.oopsnepal.com/tblgiftcards/json_currentValue/");
+			HttpPost httppost = new HttpPost("http://customerloyaltyplus.com/tblgiftcards/json_currentValue/");
 
 			try {
 				// Add your data
@@ -303,7 +302,7 @@ public class Redeemgift extends Activity {
 				// Execute HTTP Post Request
 				HttpResponse response = httpclient.execute(httppost, localContext);
 				String responseStr = EntityUtils.toString(response.getEntity());
-				Log.d("result", "http://conceptcard.oopsnepal.com/tblgiftcards/json_currentValue/");
+				Log.d("result", "http://customerloyaltyplus.com/tblgiftcards/json_currentValue/");
 				Log.d("response",responseStr);
 				res = new JSONObject(responseStr);
 

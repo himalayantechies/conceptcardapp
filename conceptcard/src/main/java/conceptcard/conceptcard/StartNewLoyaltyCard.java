@@ -82,26 +82,6 @@ public class StartNewLoyaltyCard extends Activity implements OnClickListener {
 		etInitialPoint.setRawInputType(Configuration.KEYBOARD_12KEY);
 		btnsound = MediaPlayer.create(StartNewLoyaltyCard.this, R.raw.buttonclick);
 		ImageButton about =(ImageButton)findViewById(R.id.about);
-		/*about.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				AlertDialog alertabout = new AlertDialog.Builder(StartNewLoyaltyCard.this).create();
-				alertabout.setTitle("About Us");
-				alertabout.setMessage("Loyaltycard and Giftcard terminal by conceptcard.oopsnepal.com");
-				alertabout.setCancelable(true);
-				alertabout.setButton("OK", new DialogInterface.OnClickListener() {
-					
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						// TODO Auto-generated method stub
-						dialog.cancel();
-					}
-				});
-				alertabout.show();
-			}
-		});*/
 		ImageButton GoBack = (ImageButton) findViewById(R.id.bGoBack);
 		GoBack.setOnClickListener(new OnClickListener() {
 			@Override
@@ -144,7 +124,7 @@ public class StartNewLoyaltyCard extends Activity implements OnClickListener {
 		case ABOUT:
 			AlertDialog alertabout = new AlertDialog.Builder(StartNewLoyaltyCard.this).create();
 			alertabout.setTitle("About Us");
-			alertabout.setMessage("Loyaltycard and Giftcard terminal by conceptcard.oopsnepal.com");
+			alertabout.setMessage("Loyalty Card and Gift Card terminal by Concept Card");
 			alertabout.setCancelable(true);
 			alertabout.setButton("OK", new DialogInterface.OnClickListener() {
 				
@@ -205,17 +185,11 @@ public class StartNewLoyaltyCard extends Activity implements OnClickListener {
 			// TODO Auto-generated method stub
 			String res = null;
 			HttpClient httpclient = new DefaultHttpClient();
-			HttpPost httppost = new HttpPost(
-					"http://conceptcard.oopsnepal.com/tblloyaltycardholders/json_encode/"
-							+ cardNumber.getText().toString());
-			/*HttpPost httppost = new HttpPost(
-					"http://10.0.2.2/conceptcard/tblloyaltycardholders/json_encode/"
-							+ cardNumber.getText().toString());*/
+			HttpPost httppost = new HttpPost("http://customerloyaltyplus.com/tblloyaltycardholders/json_encode/" + cardNumber.getText().toString());
 			try {
 				// Add your data
 				List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-				nameValuePairs.add(new BasicNameValuePair("myHttpData",
-						cardNumber.getText().toString()));
+				nameValuePairs.add(new BasicNameValuePair("myHttpData", cardNumber.getText().toString()));
 				httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
 				// Execute HTTP Post Request
@@ -300,23 +274,16 @@ private class asyncConnection extends AsyncTask<Void, Void, JSONObject> {
 			HttpClient httpclient = new DefaultHttpClient();
 			HttpContext localContext = new BasicHttpContext();
 			localContext.setAttribute(ClientContext.COOKIE_STORE, INSConst.cookieStore);
-			HttpPost httppost = new HttpPost(
-				"http://conceptcard.oopsnepal.com/tblloyaltycardholders/json_addnewloyalty/");
-			/*HttpPost httppost = new HttpPost(
-					"http://10.0.2.2/conceptcard/tblloyaltycardholders/json_addnewloyalty/");*/
-							
+			HttpPost httppost = new HttpPost("http://customerloyaltyplus.com/tblloyaltycardholders/json_addnewloyalty/");
+
 			try {
 				// Add your data
 
 				List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-				nameValuePairs.add(new BasicNameValuePair("FirstName",
-						etName.getText().toString()));
-				nameValuePairs.add(new BasicNameValuePair("Email1",
-						etEmail.getText().toString()));
-				nameValuePairs.add(new BasicNameValuePair("CardNumber",
-						etLoyaltyCardnumber.getText().toString()));
-				nameValuePairs.add(new BasicNameValuePair("Points",
-						etInitialPoint.getText().toString()));
+				nameValuePairs.add(new BasicNameValuePair("FirstName", etName.getText().toString()));
+				nameValuePairs.add(new BasicNameValuePair("Email1", etEmail.getText().toString()));
+				nameValuePairs.add(new BasicNameValuePair("CardNumber", etLoyaltyCardnumber.getText().toString()));
+				nameValuePairs.add(new BasicNameValuePair("Points", etInitialPoint.getText().toString()));
 				httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
 				// Execute HTTP Post Request

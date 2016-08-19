@@ -31,7 +31,6 @@ public class MainActivity extends Activity {
 		Button APTLC = (Button) findViewById(R.id.bAddPointsToLoyaltyCard);
 		Button redeem_giftcard = (Button)findViewById(R.id.bRedeemGiftCard);
 		Button redeem_loyaltycard = (Button)findViewById(R.id.bRedeemloyaltyCard);
-		Button demo = (Button)findViewById(R.id.demo);
 		ImageButton about = (ImageButton)findViewById(R.id.about);
 		about.setOnClickListener(new View.OnClickListener() {
 			
@@ -40,7 +39,7 @@ public class MainActivity extends Activity {
 				// TODO Auto-generated method stub
 				AlertDialog alertabout = new AlertDialog.Builder(MainActivity.this).create();
 				alertabout.setTitle("About Us");
-				alertabout.setMessage("Loyaltycard and Giftcard terminal by conceptcard.oopsnepal.com");
+				alertabout.setMessage("Loyalty Card and Gift Card terminal by Concept Card");
 				alertabout.setCancelable(true);
 				alertabout.setButton("OK", new DialogInterface.OnClickListener() {
 					

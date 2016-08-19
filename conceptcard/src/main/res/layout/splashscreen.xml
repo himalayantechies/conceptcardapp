@@ -20,6 +20,6 @@
         android:textColor="#fff"
         android:gravity="center_horizontal"
         android:layout_alignParentBottom="true"
-        android:text="www.conceptcard.oopsnepal.com" />
+        android:text="customerloyaltyplus.com" />
 
 </RelativeLayout>

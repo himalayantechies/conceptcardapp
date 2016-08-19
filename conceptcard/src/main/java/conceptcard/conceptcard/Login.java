@@ -83,7 +83,7 @@ public class Login extends Activity {
 				// TODO Auto-generated method stub
 				AlertDialog alertabout = new AlertDialog.Builder(Login.this).create();
 				alertabout.setTitle("About Us");
-				alertabout.setMessage("Loyaltycard and Giftcard terminal by conceptcard.oopsnepal.com");
+				alertabout.setMessage("Loyalty Card and Gift Card terminal by Concept Card");
 				alertabout.setCancelable(true);
 				alertabout.setButton("OK", new DialogInterface.OnClickListener() {
 					
@@ -132,10 +132,8 @@ public class Login extends Activity {
 		}
 		return false;
 	}
-private class asyncConnection extends AsyncTask<Void, Void, JSONObject> {
 
-		
-
+	private class asyncConnection extends AsyncTask<Void, Void, JSONObject> {
 		private boolean cancel;
 		@Override
 		protected void onPreExecute(){
@@ -150,25 +148,19 @@ private class asyncConnection extends AsyncTask<Void, Void, JSONObject> {
 		protected JSONObject doInBackground(Void... params) {
 			JSONObject res = null;
 			int statusCode = 0;
-			// TODO Auto-generated method stub
-			// TODO Auto-generated method stub
+
 			HttpClient httpclient = new DefaultHttpClient();
 			HttpContext localContext = new BasicHttpContext();
-			   localContext.setAttribute(ClientContext.COOKIE_STORE, INSConst.cookieStore);
-			HttpPost httppost = new HttpPost(
-					"http://conceptcard.oopsnepal.com/tblorganisationusers/login/");
-			/*HttpPost httppost = new HttpPost(
-					"http://10.0.2.2/conceptcard/tblorganisationusers/login/");*/
+			localContext.setAttribute(ClientContext.COOKIE_STORE, INSConst.cookieStore);
+			HttpPost httppost = new HttpPost("http://customerloyaltyplus.com/tblorganisationusers/login/");
+
 			try {
 				// Add your data
 
 				List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-				nameValuePairs.add(new BasicNameValuePair("requestFrom",
-						"mobile"));
-				nameValuePairs.add(new BasicNameValuePair("username",
-						username.getText().toString()));
-				nameValuePairs.add(new BasicNameValuePair("password",
-						password.getText().toString()));
+				nameValuePairs.add(new BasicNameValuePair("requestFrom", "mobile"));
+				nameValuePairs.add(new BasicNameValuePair("username", username.getText().toString()));
+				nameValuePairs.add(new BasicNameValuePair("password", password.getText().toString()));
 				httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
 				// Execute HTTP Post Request
@@ -223,7 +215,7 @@ private class asyncConnection extends AsyncTask<Void, Void, JSONObject> {
 			try {
 				if(json.has("exception")) {
 					if(json.getBoolean("exception"))
-						Toast.makeText(getApplicationContext(), "oops!! something went wrong.", Toast.LENGTH_LONG).show();
+						Toast.makeText(getApplicationContext(), "Something went wrong. Please try again later.", Toast.LENGTH_LONG).show();
 				} else {
 					boolean c = json.getBoolean(TAG_LOGIN_SUCCESS);
 					Log.d("Start","start");

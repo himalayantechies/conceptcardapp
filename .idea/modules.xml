@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/conceptcard/conceptcard.iml" filepath="$PROJECT_DIR$/conceptcard/conceptcard.iml" />
-      <module fileurl="file://$PROJECT_DIR$/conceptcard-android.iml" filepath="$PROJECT_DIR$/conceptcard-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/conceptcardapp.iml" filepath="$PROJECT_DIR$/conceptcardapp.iml" />
     </modules>
   </component>
 </project>

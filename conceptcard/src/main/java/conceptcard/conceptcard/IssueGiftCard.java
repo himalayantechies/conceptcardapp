@@ -1,52 +1,5 @@
 package conceptcard.conceptcard;
 
-/*import android.app.Activity;
- import android.content.Intent;
- import android.os.Bundle;
- import android.view.View;
- import android.view.View.OnClickListener;
- import android.widget.Button;
- import android.widget.EditText;
- import android.widget.TextView;
- import android.widget.Toast;
-
- public class IssueGiftCard extends Activity {
- Button GoBack, Return;
- @Override
- protected void onCreate(Bundle savedInstanceState) {
- // TODO Auto-generated method stub
- super.onCreate(savedInstanceState);
- setContentView(R.layout.issue_gift_card);
- Return = (Button) findViewById(R.id.bReturn);
-
- Return.setOnClickListener(new OnClickListener() {
-
- @Override
- public void onClick(View v) {
- final TextView cardnum = (TextView) findViewById(R.id.etcardNumber);
- String cardNumber = cardnum.getText().toString();
- // TODO Auto-generated method stub
- // startActivity(new
- // Intent(IssueGiftCard.this,AfterReturn.class));
- Toast.makeText(IssueGiftCard.this,cardNumber, Toast.LENGTH_LONG).show();
- startActivity(new Intent(IssueGiftCard.this, AfterReturn.class).putExtra("cnum", (CharSequence)cardNumber));
-
- }
- });
- GoBack=(Button)findViewById(R.id.bGoBack);
- GoBack.setOnClickListener(new OnClickListener() {
-
- @Override
- public void onClick(View v) {
- // TODO Auto-generated method stub
- startActivity(new Intent(IssueGiftCard.this, MainActivity.class));
- }
- });
-
- }
-
- }*/
-
 import android.text.InputFilter;
 import android.text.Spanned;
 import android.util.Log;
@@ -141,7 +94,7 @@ public class IssueGiftCard extends Activity implements OnClickListener {
 				// TODO Auto-generated method stub
 				AlertDialog alertabout = new AlertDialog.Builder(IssueGiftCard.this).create();
 				alertabout.setTitle("About Us");
-				alertabout.setMessage("Loyaltycard and Giftcard terminal by conceptcard.oopsnepal.com");
+				alertabout.setMessage("Loyalty Card and Gift Card terminal by Concept Card");
 				alertabout.setCancelable(true);
 				alertabout.setButton("OK", new DialogInterface.OnClickListener() {
 					
@@ -201,7 +154,7 @@ public class IssueGiftCard extends Activity implements OnClickListener {
 		case ABOUT:
 			AlertDialog alertabout = new AlertDialog.Builder(IssueGiftCard.this).create();
 			alertabout.setTitle("About Us");
-			alertabout.setMessage("Loyaltycard and Giftcard terminal by conceptcard.oopsnepal.com");
+			alertabout.setMessage("Loyalty Card and Gift Card terminal by Concept Card");
 			alertabout.setCancelable(true);
 			alertabout.setButton("OK", new DialogInterface.OnClickListener() {
 				
@@ -269,21 +222,15 @@ public class IssueGiftCard extends Activity implements OnClickListener {
 			// TODO Auto-generated method stub
 			HttpClient httpclient = new DefaultHttpClient();
 			HttpContext localContext = new BasicHttpContext();
-			   localContext.setAttribute(ClientContext.COOKIE_STORE, INSConst.cookieStore);
-			HttpPost httppost = new HttpPost(
-					"http://conceptcard.oopsnepal.com/tblgiftcards/json_encode/"
-							+ valueStr);
-			/*HttpPost httppost = new HttpPost(
-					"http://10.0.2.2/conceptcard/tblgiftcards/json_encode/"
-							+ value.getText().toString());*/
-			
+			localContext.setAttribute(ClientContext.COOKIE_STORE, INSConst.cookieStore);
+			HttpPost httppost = new HttpPost("http://customerloyaltyplus.com/tblgiftcards/json_encode/" + valueStr);
+
 			Log.i("value", valueStr);
 			try {
 				// Add your data
 
 				List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-				nameValuePairs.add(new BasicNameValuePair("myHttpData",
-						valueStr));
+				nameValuePairs.add(new BasicNameValuePair("myHttpData", valueStr));
 				httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
 				// Execute HTTP Post Request
@@ -295,11 +242,8 @@ public class IssueGiftCard extends Activity implements OnClickListener {
 				
 			} catch (ClientProtocolException e) {
 				Log.i("st", "cl");
-				// TODO Auto-generated catch block
 			} catch (IOException e) {
 				Log.i("st", "io");
-				// TODO Auto-generated catch block
-
 			}
 			return res;
 			// return null;
@@ -372,19 +316,14 @@ private class asyncConnection extends AsyncTask<Void, Void, JSONObject> {
 			HttpClient httpclient = new DefaultHttpClient();
 			HttpContext localContext = new BasicHttpContext();
 			localContext.setAttribute(ClientContext.COOKIE_STORE, INSConst.cookieStore);
-			HttpPost httppost = new HttpPost(
-				"http://conceptcard.oopsnepal.com/tblgiftcards/json_giftAdd/");
-			/*HttpPost httppost = new HttpPost(
-					"http://10.0.2.2/conceptcard/tblgiftcards/json_giftAdd/");*/
-						
+			HttpPost httppost = new HttpPost("http://customerloyaltyplus.com/tblgiftcards/json_giftAdd/");
+
 			try {
 				// Add your data
 
 				List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-				nameValuePairs.add(new BasicNameValuePair("CardNumber",
-						cardNumStr));
-				nameValuePairs.add(new BasicNameValuePair("OriginalValue",
-						cardValueStr));
+				nameValuePairs.add(new BasicNameValuePair("CardNumber", cardNumStr));
+				nameValuePairs.add(new BasicNameValuePair("OriginalValue", cardValueStr));
 				httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
 				// Execute HTTP Post Request
@@ -397,16 +336,13 @@ private class asyncConnection extends AsyncTask<Void, Void, JSONObject> {
 				try {
 					res = new JSONObject("{exception: true}");
 				} catch (JSONException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				// TODO Auto-generated catch block
 			} catch (IOException e) {
 				Log.i("st", "io");
 				try {
 					res = new JSONObject("{exception: true}");
 				} catch (JSONException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 				// TODO Auto-generated catch block
