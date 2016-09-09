@@ -34,6 +34,8 @@ import org.json.JSONObject;
 
 
 import conceptcard.asynctask.library.checkconnection;
+
+import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -54,12 +56,15 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Login extends Activity {
 	Button login;
 	EditText password,username;
 	MediaPlayer btnsound;
+	TextView txtVersion;
+	String version = "";
 	private static final String TAG_LOGIN_SUCCESS = "success";
 	private static final String TAG_ORG_SUCCESS = "pointPound";
 	private static final int EXIT = 0;
@@ -70,12 +75,19 @@ public class Login extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login);
+		txtVersion = (TextView) findViewById(R.id.txtVersion);
 		login = (Button)findViewById(R.id.login);
 		username = (EditText)findViewById(R.id.username);
 		password = (EditText)findViewById(R.id.password);
 		display = (RelativeLayout) findViewById(R.id.logindp);
 		btnsound = MediaPlayer.create(Login.this, R.raw.buttonclick);
 		ImageButton about = (ImageButton)findViewById(R.id.about);
+		try {
+			version = getApplicationContext().getPackageManager().getPackageInfo(getApplicationContext().getPackageName(), 0).versionName;
+		} catch (PackageManager.NameNotFoundException e) {
+			e.printStackTrace();
+		}
+
 		about.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
