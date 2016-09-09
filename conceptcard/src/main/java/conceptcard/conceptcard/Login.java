@@ -87,7 +87,7 @@ public class Login extends Activity {
 		} catch (PackageManager.NameNotFoundException e) {
 			e.printStackTrace();
 		}
-
+		if(!version.isEmpty()) txtVersion.setText("Ver: " + version);
 		about.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
