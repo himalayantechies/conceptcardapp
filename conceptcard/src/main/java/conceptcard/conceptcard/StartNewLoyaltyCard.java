@@ -158,13 +158,15 @@ public class StartNewLoyaltyCard extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		btnsound.start();
-		if (cardNumber.getText().toString().length() < 1) {
+		String cNum = cardNumber.getText().toString().replaceAll("[^0-9]", "");
+		cardNumber.setText(cNum);
+		if (cNum.length() < 1) {
 			// out of range
 			Toast.makeText(this, "Please Enter Card Number", Toast.LENGTH_LONG)
 					.show();
 		} else {
 			// pb.setVisibility(View.VISIBLE);
-			new MyAsyncTask().execute(cardNumber.getText().toString());
+			new MyAsyncTask().execute(cNum);
 		}
 
 	}
@@ -341,6 +343,12 @@ private class asyncConnection extends AsyncTask<Void, Void, JSONObject> {
 					}else{
 						String msg = json.getString("error_msg");
 						Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
+					}
+					if(!json.has("user")) {
+						logout();
+						Intent lgintent = new Intent(getApplicationContext(),Login.class);
+						startActivity(lgintent);
+						finish();
 					}
 				}
 			

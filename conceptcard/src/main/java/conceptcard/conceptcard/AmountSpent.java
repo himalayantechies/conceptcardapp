@@ -283,6 +283,12 @@ public class AmountSpent extends Activity{
 						String msg = json.getString("error_msg");
 							Toast.makeText(getApplicationContext(),msg, Toast.LENGTH_LONG).show();
 					}
+					if(!json.has("user")) {
+						logout();
+						Intent lgintent = new Intent(getApplicationContext(),Login.class);
+						startActivity(lgintent);
+						finish();
+					}
 				}
 			
 			} catch (JSONException e) {
@@ -365,6 +371,14 @@ public class AmountSpent extends Activity{
 					}else{
 						String point = "0";
 						setCurrentPoint.setText(point);
+						String msg = json.getString("error_msg");
+						Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
+					}
+					if(!json.has("user")) {
+						logout();
+						Intent lgintent = new Intent(getApplicationContext(),Login.class);
+						startActivity(lgintent);
+						finish();
 					}
 				}
 			} catch (JSONException e) {
