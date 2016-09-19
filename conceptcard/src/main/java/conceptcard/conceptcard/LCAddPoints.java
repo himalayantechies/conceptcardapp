@@ -165,6 +165,8 @@ public class LCAddPoints extends Activity{
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				btnsound.start();
+				String cNum = etAddLoyaltyCardNum.getText().toString().replaceAll("[^0-9]", "");
+				etAddLoyaltyCardNum.setText(cNum);
 				if (etAddAmtofSpend.getText().toString().length() < 1 || etAddLoyaltyCardNum.getText().toString().length() < 1) {
 
 					// out of range
@@ -323,8 +325,13 @@ private class asyncConnection extends AsyncTask<Void, Void, JSONObject> {
 						String msg = json.getString("error_msg");
 						Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
 					}
+					if(!json.has("user")) {
+						logout();
+						Intent lgintent = new Intent(getApplicationContext(),Login.class);
+						startActivity(lgintent);
+						finish();
+					}
 				}
-			
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
@@ -403,6 +410,14 @@ private class asyncConnection extends AsyncTask<Void, Void, JSONObject> {
 					}else{
 						String point = "0";
 						setCurrentPoint.setText(point);
+						String msg = json.getString("error_msg");
+						Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
+					}
+					if(!json.has("user")) {
+						logout();
+						Intent lgintent = new Intent(getApplicationContext(),Login.class);
+						startActivity(lgintent);
+						finish();
 					}
 				}
 			} catch (JSONException e) {

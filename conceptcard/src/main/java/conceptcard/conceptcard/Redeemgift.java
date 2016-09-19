@@ -109,6 +109,8 @@ public class Redeemgift extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				btnsound.start();
+				String cNum = etGiftCardNum.getText().toString().replaceAll("[^0-9]", "");
+				etGiftCardNum.setText(cNum);
 				if (etGiftCardNum.getText().toString().length() < 1 || etGiftSpend.getText().toString().length() < 1) {
 					// out of range
 					Toast.makeText(getApplicationContext(), "Please enter all fields", Toast.LENGTH_LONG).show();
@@ -274,6 +276,12 @@ public class Redeemgift extends Activity {
 						error.setText("The card number is not active.");
 						Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
 					}
+					if(!json.has("user")) {
+						logout();
+						Intent lgintent = new Intent(getApplicationContext(),Login.class);
+						startActivity(lgintent);
+						finish();
+					}
 				}
 			
 			} catch (JSONException e) {
@@ -353,9 +361,17 @@ public class Redeemgift extends Activity {
 						String point = json.getString(TAG_POINT_VALUE);
 						setCurrentValue.setText(point);
 					}else{
+                        String msg = json.getString("error_msg");
+                        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
 						String point = "0";
 						setCurrentValue.setText(point);
 					}
+                    if(!json.has("user")) {
+                        logout();
+                        Intent lgintent = new Intent(getApplicationContext(),Login.class);
+                        startActivity(lgintent);
+                        finish();
+                    }
 				}
 			} catch (JSONException e) {
 				e.printStackTrace();

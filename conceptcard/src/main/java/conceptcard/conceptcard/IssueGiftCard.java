@@ -188,6 +188,8 @@ public class IssueGiftCard extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		btnsound.start();
+		String cNum = value.getText().toString().replaceAll("[^0-9]", "");
+		value.setText(cNum);
 		if (value.getText().toString().length() < 1) {
 
 			// out of range
@@ -377,6 +379,12 @@ private class asyncConnection extends AsyncTask<Void, Void, JSONObject> {
 					}else{
 						Toast.makeText(getApplicationContext(), "Error occured!Please try again", Toast.LENGTH_LONG).show();
 					}
+				}
+				if(!json.has("user")) {
+					logout();
+					Intent lgintent = new Intent(getApplicationContext(),Login.class);
+					startActivity(lgintent);
+					finish();
 				}
 			} catch (JSONException e) {
 				e.printStackTrace();
